@@ -8,52 +8,52 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Trading School Professional Palette */
+    /* Red/White/Black Trading School Palette */
     --background: 0 0% 100%;
-    --foreground: 210 15% 15%;
+    --foreground: 0 0% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 15% 15%;
+    --card-foreground: 0 0% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 15% 15%;
+    --popover-foreground: 0 0% 15%;
 
-    /* Financial Blue Theme */
-    --primary: 210 85% 25%;
+    /* Primary Red Theme (60%) */
+    --primary: 0 85% 45%;
     --primary-foreground: 0 0% 98%;
-    --primary-hover: 210 85% 20%;
+    --primary-hover: 0 85% 40%;
 
-    /* Profit Green Accents */
-    --success: 140 65% 35%;
+    /* Success Red Variant */
+    --success: 0 75% 35%;
     --success-foreground: 0 0% 98%;
     
     /* Professional Secondary */
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 210 15% 25%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 25%;
 
-    --muted: 210 15% 96%;
-    --muted-foreground: 210 10% 45%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 210 95% 50%;
+    --accent: 0 85% 50%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 75% 55%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 210 15% 90%;
-    --input: 210 15% 94%;
-    --ring: 210 85% 25%;
+    --border: 0 0% 90%;
+    --input: 0 0% 94%;
+    --ring: 0 85% 45%;
 
     --radius: 0.5rem;
 
-    /* Trading Platform Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
-    --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(140 65% 45%));
-    --gradient-hero: linear-gradient(135deg, hsl(210 85% 15%), hsl(210 85% 35%));
+    /* Red/Black Trading Platform Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(0 85% 55%));
+    --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(0 75% 45%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 15%), hsl(0 85% 25%));
     
     /* Professional Shadows */
     --shadow-trading: 0 20px 40px -10px hsl(var(--primary) / 0.15);
-    --shadow-card: 0 4px 20px -4px hsl(210 15% 15% / 0.08);
+    --shadow-card: 0 4px 20px -4px hsl(0 0% 15% / 0.08);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -77,33 +77,33 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 8%;
+    --foreground: 0 0% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 0 85% 55%;
+    --primary-foreground: 0 0% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 0 85% 60%;
+    --accent-foreground: 0 0% 8%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 85% 55%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
