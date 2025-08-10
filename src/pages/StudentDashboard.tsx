@@ -13,6 +13,7 @@ import {
   BarChart3,
   Upload
 } from "lucide-react";
+import HomeworkSubmission from "@/components/HomeworkSubmission";
 
 const StudentDashboard = () => {
   return (
@@ -117,13 +118,12 @@ const StudentDashboard = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="flex justify-between items-center p-4 border border-border rounded-lg">
-                    <div>
-                      <h3 className="font-semibold text-foreground">Market Analysis Report</h3>
-                      <p className="text-sm text-muted-foreground">Due: March 15, 2024</p>
-                    </div>
-                    <Button variant="outline" size="sm">Submit</Button>
-                  </div>
+                  <HomeworkSubmission
+                    assignmentId="1"
+                    assignmentTitle="Market Analysis Report"
+                    dueDate="March 15, 2024"
+                    onSubmit={(data) => console.log("Submitted:", data)}
+                  />
                   
                   <div className="flex justify-between items-center p-4 border border-border rounded-lg">
                     <div>

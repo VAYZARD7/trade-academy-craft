@@ -16,8 +16,34 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import GradingSystem from "@/components/GradingSystem";
 
 const TeacherDashboard = () => {
+  const mockSubmissions = [
+    {
+      id: "1",
+      studentName: "John Doe",
+      studentEmail: "john@example.com",
+      title: "Market Analysis Report",
+      description: "Detailed analysis of current market trends and trading opportunities.",
+      files: ["market-analysis.pdf", "charts.xlsx"],
+      submittedAt: "2024-03-10T10:30:00Z",
+      status: "pending" as const
+    },
+    {
+      id: "2",
+      studentName: "Jane Smith",
+      studentEmail: "jane@example.com",
+      title: "Trading Strategy Presentation",
+      description: "Comprehensive trading strategy with risk management approach.",
+      files: ["strategy-presentation.pptx"],
+      submittedAt: "2024-03-09T14:20:00Z",
+      status: "graded" as const,
+      grade: 88,
+      feedback: "Excellent work on risk management analysis. Consider adding more historical backtesting data."
+    }
+  ];
+
   const upcomingSessions = [
     { id: 1, title: "Advanced Chart Patterns", date: "Today, 2:00 PM", students: 24, type: "live" },
     { id: 2, title: "Risk Management Strategies", date: "Tomorrow, 10:00 AM", students: 18, type: "workshop" },
@@ -100,6 +126,7 @@ const TeacherDashboard = () => {
         <Tabs defaultValue="courses" className="space-y-6">
           <TabsList>
             <TabsTrigger value="courses">My Courses</TabsTrigger>
+            <TabsTrigger value="grading">Grade Assignments</TabsTrigger>
             <TabsTrigger value="sessions">Live Sessions</TabsTrigger>
             <TabsTrigger value="interactions">Student Interactions</TabsTrigger>
             <TabsTrigger value="content">Content Library</TabsTrigger>
@@ -147,6 +174,15 @@ const TeacherDashboard = () => {
                 </Card>
               ))}
             </div>
+          </TabsContent>
+
+          <TabsContent value="grading" className="space-y-6">
+            <GradingSystem
+              submissions={mockSubmissions}
+              onGrade={(submissionId, grade, feedback) => {
+                console.log("Graded:", { submissionId, grade, feedback });
+              }}
+            />
           </TabsContent>
 
           <TabsContent value="sessions" className="space-y-6">

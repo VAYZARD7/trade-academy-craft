@@ -15,8 +15,34 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import GradingSystem from "@/components/GradingSystem";
 
 const CuratorDashboard = () => {
+  const mockSubmissions = [
+    {
+      id: "3",
+      studentName: "Alice Johnson",
+      studentEmail: "alice@example.com",
+      title: "Portfolio Analysis",
+      description: "Analysis of diversified trading portfolio with risk assessment.",
+      files: ["portfolio-analysis.pdf"],
+      submittedAt: "2024-03-11T09:15:00Z",
+      status: "pending" as const
+    },
+    {
+      id: "4",
+      studentName: "Bob Wilson",
+      studentEmail: "bob@example.com",
+      title: "Market Research Project",
+      description: "Comprehensive research on emerging market opportunities.",
+      files: ["market-research.docx", "data-analysis.xlsx"],
+      submittedAt: "2024-03-08T16:45:00Z",
+      status: "needs_revision" as const,
+      grade: 72,
+      feedback: "Good analysis but needs more depth in the conclusion section. Please revise and resubmit."
+    }
+  ];
+
   const pendingAssignments = [
     { id: 1, student: "John Smith", course: "Technical Analysis", assignment: "Chart Pattern Recognition", submitted: "2 hours ago", priority: "high" },
     { id: 2, student: "Sarah Johnson", course: "Risk Management", assignment: "Portfolio Analysis", submitted: "5 hours ago", priority: "medium" },
@@ -92,6 +118,7 @@ const CuratorDashboard = () => {
         <Tabs defaultValue="pending" className="space-y-6">
           <TabsList>
             <TabsTrigger value="pending">Pending Reviews</TabsTrigger>
+            <TabsTrigger value="grading">Grade Submissions</TabsTrigger>
             <TabsTrigger value="graded">Recently Graded</TabsTrigger>
             <TabsTrigger value="analytics">Quality Analytics</TabsTrigger>
           </TabsList>
@@ -129,6 +156,15 @@ const CuratorDashboard = () => {
                 </Card>
               ))}
             </div>
+          </TabsContent>
+
+          <TabsContent value="grading" className="space-y-6">
+            <GradingSystem
+              submissions={mockSubmissions}
+              onGrade={(submissionId, grade, feedback) => {
+                console.log("Graded:", { submissionId, grade, feedback });
+              }}
+            />
           </TabsContent>
 
           <TabsContent value="graded" className="space-y-6">
