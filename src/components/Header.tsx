@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, TrendingUp, User, BookOpen, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { LanguageToggle } from "@/components/LanguageToggle";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,13 +36,15 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Auth Buttons */}
+          {/* Desktop Controls */}
           <div className="hidden md:flex items-center space-x-4">
+            <ThemeToggle />
+            <LanguageToggle />
             <Button variant="ghost" asChild>
               <Link to="/login">Login</Link>
             </Button>
             <Button variant="hero" asChild>
-              <Link to="/signup">Start Learning</Link>
+              <Link to="/register">Start Learning</Link>
             </Button>
           </div>
 
@@ -70,11 +74,15 @@ const Header = () => {
                 Contact
               </Link>
               <div className="flex flex-col space-y-2 pt-4 border-t border-border">
+                <div className="flex items-center justify-between mb-2">
+                  <ThemeToggle />
+                  <LanguageToggle />
+                </div>
                 <Button variant="ghost" asChild>
                   <Link to="/login">Login</Link>
                 </Button>
                 <Button variant="hero" asChild>
-                  <Link to="/signup">Start Learning</Link>
+                  <Link to="/register">Start Learning</Link>
                 </Button>
               </div>
             </div>
