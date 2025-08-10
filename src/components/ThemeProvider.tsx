@@ -33,7 +33,9 @@ export function ThemeProvider({
   useEffect(() => {
     const root = window.document.documentElement
 
+    // Remove both class and data-theme attributes
     root.classList.remove("light", "dark")
+    root.removeAttribute("data-theme")
 
     if (theme === "system") {
       const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
@@ -41,11 +43,11 @@ export function ThemeProvider({
         ? "dark"
         : "light"
 
-      root.classList.add(systemTheme)
+      root.setAttribute("data-theme", systemTheme)
       return
     }
 
-    root.classList.add(theme)
+    root.setAttribute("data-theme", theme)
   }, [theme])
 
   const value = {

@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
 
-export type Language = 'en' | 'ru';
+export type Language = 'en' | 'ru' | 'hy';
 
 interface LanguageContextType {
   language: Language;
@@ -52,13 +52,16 @@ const translations = {
     
     // Login
     'login.title': 'Welcome Back',
-    'login.subtitle': 'Sign in to your account',
+    'login.subtitle': 'Sign in to your account to continue',
     'login.email': 'Email',
     'login.password': 'Password',
     'login.forgot_password': 'Forgot password?',
     'login.sign_in': 'Sign In',
     'login.no_account': "Don't have an account?",
     'login.sign_up': 'Sign up',
+    'login.email_placeholder': 'Enter your email',
+    'login.password_placeholder': 'Enter your password',
+    'login.or_continue_with': 'Or continue with',
     
     // Contact Form
     'contact.form.title': 'Get in Touch',
@@ -68,6 +71,34 @@ const translations = {
     'contact.form.phone': 'Phone Number',
     'contact.form.message': 'Message',
     'contact.form.send': 'Send Message',
+    'contact.form.first_name': 'First Name',
+    'contact.form.last_name': 'Last Name',
+    'contact.form.interest_area': 'Interest Area',
+    'contact.form.experience_level': 'Experience Level',
+    'contact.form.send_application': 'Send Application',
+    'contact.form.sending': 'Sending...',
+    'contact.form.success': 'Application sent successfully! We\'ll contact you soon.',
+    
+    // Form placeholders and options
+    'form.first_name_placeholder': 'First Name',
+    'form.last_name_placeholder': 'Last Name',
+    'form.email_placeholder': 'Email Address',
+    'form.phone_placeholder': 'Phone Number',
+    'form.message_placeholder': 'Tell us about your trading goals and questions...',
+    'form.interest_beginner': 'Beginner Trading',
+    'form.interest_advanced': 'Advanced Strategies',
+    'form.interest_crypto': 'Cryptocurrency',
+    'form.interest_options': 'Options Trading',
+    'form.interest_risk': 'Risk Management',
+    'form.interest_technical': 'Technical Analysis',
+    'form.experience_none': 'No Experience',
+    'form.experience_beginner': 'Beginner (0-1 years)',
+    'form.experience_intermediate': 'Intermediate (1-3 years)',
+    'form.experience_advanced': 'Advanced (3+ years)',
+    
+    // Index page
+    'index.contact_title': 'Ready to Get Started?',
+    'index.contact_subtitle': 'Leave your application and we\'ll contact you to discuss your trading goals',
     
     // About Page
     'about.title': 'About TradeMaster Academy',
@@ -137,6 +168,13 @@ const translations = {
     'footer.privacy': 'Privacy Policy',
     'footer.terms': 'Terms of Service',
     'footer.copyright': '© 2024 TradeMaster Academy. All rights reserved.',
+    
+    // Common
+    'common.google': 'Google',
+    'common.facebook': 'Facebook',
+    'common.email': 'email',
+    'common.phone': 'phone',
+    'common.location': 'location',
   },
   ru: {
     // Header
@@ -179,13 +217,16 @@ const translations = {
     
     // Login
     'login.title': 'Добро пожаловать обратно',
-    'login.subtitle': 'Войдите в свой аккаунт',
+    'login.subtitle': 'Войдите в свой аккаунт для продолжения',
     'login.email': 'Email',
     'login.password': 'Пароль',
     'login.forgot_password': 'Забыли пароль?',
     'login.sign_in': 'Войти',
     'login.no_account': 'Нет аккаунта?',
     'login.sign_up': 'Зарегистрироваться',
+    'login.email_placeholder': 'Введите ваш email',
+    'login.password_placeholder': 'Введите ваш пароль',
+    'login.or_continue_with': 'Или продолжить с',
     
     // Contact Form
     'contact.form.title': 'Свяжитесь с нами',
@@ -195,6 +236,34 @@ const translations = {
     'contact.form.phone': 'Номер телефона',
     'contact.form.message': 'Сообщение',
     'contact.form.send': 'Отправить сообщение',
+    'contact.form.first_name': 'Имя',
+    'contact.form.last_name': 'Фамилия',
+    'contact.form.interest_area': 'Область интересов',
+    'contact.form.experience_level': 'Уровень опыта',
+    'contact.form.send_application': 'Отправить заявку',
+    'contact.form.sending': 'Отправка...',
+    'contact.form.success': 'Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.',
+    
+    // Form placeholders and options
+    'form.first_name_placeholder': 'Имя',
+    'form.last_name_placeholder': 'Фамилия',
+    'form.email_placeholder': 'Email адрес',
+    'form.phone_placeholder': 'Номер телефона',
+    'form.message_placeholder': 'Расскажите нам о ваших торговых целях и вопросах...',
+    'form.interest_beginner': 'Базовый трейдинг',
+    'form.interest_advanced': 'Продвинутые стратегии',
+    'form.interest_crypto': 'Криптовалюта',
+    'form.interest_options': 'Торговля опционами',
+    'form.interest_risk': 'Управление рисками',
+    'form.interest_technical': 'Технический анализ',
+    'form.experience_none': 'Нет опыта',
+    'form.experience_beginner': 'Начинающий (0-1 год)',
+    'form.experience_intermediate': 'Средний (1-3 года)',
+    'form.experience_advanced': 'Продвинутый (3+ лет)',
+    
+    // Index page
+    'index.contact_title': 'Готовы начать?',
+    'index.contact_subtitle': 'Оставьте заявку и мы свяжемся с вами для обсуждения ваших торговых целей',
     
     // About Page
     'about.title': 'О TradeMaster Academy',
@@ -264,6 +333,178 @@ const translations = {
     'footer.privacy': 'Политика конфиденциальности',
     'footer.terms': 'Условия использования',
     'footer.copyright': '© 2024 TradeMaster Academy. Все права защищены.',
+    
+    // Common
+    'common.google': 'Google',
+    'common.facebook': 'Facebook',
+    'common.email': 'email',
+    'common.phone': 'телефон',
+    'common.location': 'местоположение',
+  },
+  hy: {
+    // Header
+    'header.courses': 'Դասընթացներ',
+    'header.about': 'Մեր մասին',
+    'header.pricing': 'Գներ',
+    'header.contact': 'Կապ',
+    'header.login': 'Մուտք',
+    'header.start_learning': 'Սկսել ուսուցումը',
+    
+    // Hero Section
+    'hero.title': 'Տիրապետեք առևտրին փորձագետների առաջնորդությամբ',
+    'hero.subtitle': 'Սովորեք պրոֆեսիոնալ վաճառողներից և փոխակերպեք ձեր ֆինանսական ապագան մեր համապարփակ կրթական հարթակով:',
+    'hero.get_started': 'Սկսել այսօր',
+    'hero.watch_demo': 'Դիտել ցուցադրումը',
+    
+    // Features
+    'features.title': 'Ինչու՞ ընտրել TradeMaster Academy-ն',
+    'features.expert_instructors': 'Փորձագետ մանկավարժներ',
+    'features.expert_instructors_desc': 'Սովորեք հաջողակ վաճառողներից, ովքեր ունեն երկարամյա շուկայական փորձ',
+    'features.live_trading': 'Առևտրային նիստեր իրական ժամանակում',
+    'features.live_trading_desc': 'Միացեք առևտրային նիստերին իրական ժամանակում և տեսեք ռազմավարությունները գործողության մեջ',
+    'features.comprehensive_curriculum': 'Համապարփակ ծրագիր',
+    'features.comprehensive_curriculum_desc': 'Հիմունքներից մինչև առաջադեմ ռազմավարություններ, մենք ծածկում ենք ամեն ինչ',
+    'features.community_support': 'Համայնքի աջակցություն',
+    'features.community_support_desc': 'Կապվեք այլ վաճառողների հետ և ստացեք շարունակական աջակցություն',
+    
+    // Registration
+    'register.title': 'Ստեղծել հաշիվ',
+    'register.subtitle': 'Միացեք մեր առևտրային համայնքին',
+    'register.first_name': 'Անուն',
+    'register.last_name': 'Ազգանուն',
+    'register.email': 'Էլ․ փոստ',
+    'register.phone': 'Հեռախոսահամար',
+    'register.password': 'Գաղտնաբառ',
+    'register.confirm_password': 'Հաստատեք գաղտնաբառը',
+    'register.create_account': 'Ստեղծել հաշիվ',
+    'register.already_have_account': 'Արդեն ունե՞ք հաշիվ:',
+    'register.sign_in': 'Մուտք գործել',
+    
+    // Login
+    'login.title': 'Բարի վերադարձ',
+    'login.subtitle': 'Մուտք գործեք ձեր հաշիվ շարունակելու համար',
+    'login.email': 'Էլ․ փոստ',
+    'login.password': 'Գաղտնաբառ',
+    'login.forgot_password': 'Մոռացե՞լ եք գաղտնաբառը:',
+    'login.sign_in': 'Մուտք գործել',
+    'login.no_account': 'Չունե՞ք հաշիվ:',
+    'login.sign_up': 'Գրանցվել',
+    'login.email_placeholder': 'Մուտքագրեք ձեր էլ․ փոստը',
+    'login.password_placeholder': 'Մուտքագրեք ձեր գաղտնաբառը',
+    'login.or_continue_with': 'Կամ շարունակեք հետևյալով',
+    
+    // Contact Form
+    'contact.form.title': 'Կապ հաստատել',
+    'contact.form.subtitle': 'Ունե՞ք հարցեր: Մենք ուրախ կլինենք ձեզ լսել:',
+    'contact.form.name': 'Անուն ազգանուն',
+    'contact.form.email': 'Էլ․ փոստի հասցե',
+    'contact.form.phone': 'Հեռախոսահամար',
+    'contact.form.message': 'Հաղորդագրություն',
+    'contact.form.send': 'Ուղարկել հաղորդագրությունը',
+    'contact.form.first_name': 'Անուն',
+    'contact.form.last_name': 'Ազգանուն',
+    'contact.form.interest_area': 'Հետաքրքրության ոլորտ',
+    'contact.form.experience_level': 'Փորձի մակարդակ',
+    'contact.form.send_application': 'Ուղարկել դիմումը',
+    'contact.form.sending': 'Ուղարկվում է...',
+    'contact.form.success': 'Դիմումը հաջողությամբ ուղարկվեց: Մենք կապ կհաստատենք ձեզ հետ շուտով:',
+    
+    // Form placeholders and options
+    'form.first_name_placeholder': 'Անուն',
+    'form.last_name_placeholder': 'Ազգանուն',
+    'form.email_placeholder': 'Էլ․ փոստի հասցե',
+    'form.phone_placeholder': 'Հեռախոսահամար',
+    'form.message_placeholder': 'Պատմեք մեզ ձեր առևտրային նպատակների և հարցերի մասին...',
+    'form.interest_beginner': 'Սկսնակի առևտուր',
+    'form.interest_advanced': 'Առաջադեմ ռազմավարություններ',
+    'form.interest_crypto': 'Կրիպտոարժույթ',
+    'form.interest_options': 'Օպցիոնների առևտուր',
+    'form.interest_risk': 'Ռիսկի կառավարում',
+    'form.interest_technical': 'Տեխնիկական վերլուծություն',
+    'form.experience_none': 'Փորձ չունեմ',
+    'form.experience_beginner': 'Սկսնակ (0-1 տարի)',
+    'form.experience_intermediate': 'Միջին (1-3 տարի)',
+    'form.experience_advanced': 'Առաջադեմ (3+ տարի)',
+    
+    // Index page
+    'index.contact_title': 'Պատրա՞ստ եք սկսել:',
+    'index.contact_subtitle': 'Թողեք ձեր դիմումը և մենք կկապվենք ձեզ հետ՝ քննարկելու ձեր առևտրային նպատակները',
+    
+    // About Page
+    'about.title': 'TradeMaster Academy-ի մասին',
+    'about.mission.title': 'Մեր առաքելությունը',
+    'about.mission.text': 'Ժողովրդավարացնել առևտրային կրթությունը և զորացնել անհատներին այն գիտելիքներով և հմտություններով, որոնք անհրաժեշտ են ֆինանսական շուկաներում հաջողության համար:',
+    'about.story.title': 'Մեր պատմությունը',
+    'about.story.text': 'Հիմնադրված փորձառու վաճառողների և դասավանդողների կողմից, TradeMaster Academy-ն ծնվել է այն համոզմունքից, որ որակյալ առևտրային կրթությունը պետք է մատչելի լինի բոլորի համար:',
+    'about.values.title': 'Մեր արժեքները',
+    'about.values.education': 'Կրթությունը նախ',
+    'about.values.education_desc': 'Մենք առաջնահերթություն ենք տալիս համապարփակ, գործնական կրթությանը՝ արագ լուծումների նկատմամբ:',
+    'about.values.transparency': 'Թափանցիկություն',
+    'about.values.transparency_desc': 'Բաց և ազնիվ հաղորդակցություն շուկայական իրականությունների և ռիսկերի մասին:',
+    'about.values.support': 'Համայնքի աջակցություն',
+    'about.values.support_desc': 'Վաճառողների աջակցող համայնքի ստեղծում, ովքեր օգնում են միմյանց հաջողության:',
+    
+    // Courses Page
+    'courses.title': 'Մեր դասընթացները',
+    'courses.subtitle': 'Համապարփակ առևտրային կրթություն բոլոր մակարդակների համար',
+    'courses.beginner.title': 'Առևտրի հիմունքներ',
+    'courses.beginner.price': '$299',
+    'courses.beginner.duration': '4 շաբաթ',
+    'courses.beginner.desc': 'Կատարյալ է սկսնակների համար: Սովորեք շուկայի հիմունքները, գրաֆիկների ընթերցումը և ռիսկի կառավարումը:',
+    'courses.intermediate.title': 'Առաջադեմ ռազմավարություններ',
+    'courses.intermediate.price': '$599',
+    'courses.intermediate.duration': '8 շաբաթ',
+    'courses.intermediate.desc': 'Առաջադեմ տեխնիկական վերլուծություն, առևտրային հոգեբանություն և ապացուցված ռազմավարություններ:',
+    'courses.professional.title': 'Պրոֆեսիոնալ առևտուր',
+    'courses.professional.price': '$999',
+    'courses.professional.duration': '12 շաբաթ',
+    'courses.professional.desc': 'Վարպետության դասընթաց՝ իրական ժամանակի առևտրային նիստերով և անհատական ղեկավարությամբ:',
+    'courses.enroll': 'Գրանցվել',
+    
+    // Pricing Page
+    'pricing.title': 'Ընտրեք ձեր պլանը',
+    'pricing.subtitle': 'Ճկուն գնային տարբերակներ յուրաքանչյուր վաճառողի համար',
+    'pricing.basic.title': 'Հիմնական',
+    'pricing.basic.price': '$99',
+    'pricing.basic.period': 'ամսական',
+    'pricing.pro.title': 'Պրոֆեսիոնալ',
+    'pricing.pro.price': '$199',
+    'pricing.pro.period': 'ամսական',
+    'pricing.premium.title': 'Պրեմիում',
+    'pricing.premium.price': '$299',
+    'pricing.premium.period': 'ամսական',
+    'pricing.get_started': 'Սկսել',
+    
+    // Contact Page
+    'contact.title': 'Կապ հաստատել մեզ հետ',
+    'contact.subtitle': 'Կապ հաստատեք մեր թիմի հետ',
+    'contact.info.title': 'Կապի տվյալներ',
+    'contact.info.address': 'Հասցե',
+    'contact.info.email': 'Էլ․ փոստ',
+    'contact.info.phone': 'Հեռախոս',
+    
+    // Footer
+    'footer.description': 'Պրոֆեսիոնալ առևտրային կրթություն ժամանակակից վաճառողի համար: Միացեք հազարավոր հաջողակ ուսանողների:',
+    'footer.quick_links': 'Արագ հղումներ',
+    'footer.courses': 'Դասընթացներ',
+    'footer.about': 'Մեր մասին',
+    'footer.pricing': 'Գներ',
+    'footer.contact': 'Կապ',
+    'footer.support': 'Աջակցություն',
+    'footer.help': 'Օգնության կենտրոն',
+    'footer.faq': 'ՀՏՀ',
+    'footer.community': 'Համայնք',
+    'footer.legal': 'Իրավական',
+    'footer.privacy': 'Գաղտնիության քաղաքականություն',
+    'footer.terms': 'Ծառայության պայմաններ',
+    'footer.copyright': '© 2024 TradeMaster Academy: Բոլոր իրավունքները պաշտպանված են:',
+    
+    // Common
+    'common.google': 'Google',
+    'common.facebook': 'Facebook',
+    'common.email': 'էլ․ փոստ',
+    'common.phone': 'հեռախոս',
+    'common.location': 'տեղակայություն',
   },
 };
 

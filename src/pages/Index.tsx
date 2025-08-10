@@ -4,10 +4,13 @@ import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import UserAccountsSection from "@/components/UserAccountsSection";
 import { ContactForm } from "@/components/ContactForm";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
+  const { t } = useLanguage();
+  
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Header />
       <main>
         <HeroSection />
@@ -15,14 +18,14 @@ const Index = () => {
         <UserAccountsSection />
         
         {/* Contact Form Section */}
-        <section className="py-16 bg-muted/30">
+        <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Ready to Get Started?
+                {t('index.contact_title')}
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Leave your application and we'll contact you to discuss your trading goals
+                {t('index.contact_subtitle')}
               </p>
             </div>
             <div className="flex justify-center">

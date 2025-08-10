@@ -5,12 +5,14 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { TrendingUp, Eye, EyeOff } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const { t } = useLanguage();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-muted/20 via-background to-muted/20 flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center p-4">
       <Card className="w-full max-w-md shadow-trading">
         <CardHeader className="text-center space-y-4">
           <Link to="/" className="flex items-center justify-center space-x-2">
@@ -20,30 +22,30 @@ const Login = () => {
             <span className="text-xl font-bold text-foreground">TradeMaster Academy</span>
           </Link>
           <div>
-            <CardTitle className="text-2xl">Welcome Back</CardTitle>
-            <p className="text-muted-foreground mt-2">Sign in to your account to continue</p>
+            <CardTitle className="text-2xl">{t('login.title')}</CardTitle>
+            <p className="text-muted-foreground mt-2">{t('login.subtitle')}</p>
           </div>
         </CardHeader>
         
         <CardContent className="space-y-6">
           <form className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">{t('login.email')}</Label>
               <Input 
                 id="email" 
                 type="email" 
-                placeholder="Enter your email"
+                placeholder={t('login.email_placeholder')}
                 className="transition-all duration-300 focus:ring-2 focus:ring-primary/20"
               />
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password">{t('login.password')}</Label>
               <div className="relative">
                 <Input 
                   id="password" 
                   type={showPassword ? "text" : "password"}
-                  placeholder="Enter your password"
+                  placeholder={t('login.password_placeholder')}
                   className="pr-10 transition-all duration-300 focus:ring-2 focus:ring-primary/20"
                 />
                 <button
@@ -58,12 +60,12 @@ const Login = () => {
             
             <div className="flex items-center justify-between text-sm">
               <Link to="/forgot-password" className="text-primary hover:text-primary-hover transition-colors">
-                Forgot password?
+                {t('login.forgot_password')}
               </Link>
             </div>
             
             <Button type="submit" variant="hero" className="w-full">
-              Sign In
+              {t('login.sign_in')}
             </Button>
           </form>
           
@@ -72,7 +74,7 @@ const Login = () => {
               <span className="w-full border-t border-border" />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-background px-2 text-muted-foreground">Or continue with</span>
+              <span className="px-2 text-muted-foreground">{t('login.or_continue_with')}</span>
             </div>
           </div>
           
@@ -84,20 +86,20 @@ const Login = () => {
                 <path fill="currentColor" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
                 <path fill="currentColor" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
               </svg>
-              Google
+              {t('common.google')}
             </Button>
             <Button variant="outline" className="w-full">
               <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
               </svg>
-              Facebook
+              {t('common.facebook')}
             </Button>
           </div>
           
           <div className="text-center text-sm text-muted-foreground">
-            Don't have an account?{' '}
+            {t('login.no_account')}{' '}
             <Link to="/signup" className="text-primary hover:text-primary-hover font-medium transition-colors">
-              Sign up
+              {t('login.sign_up')}
             </Link>
           </div>
         </CardContent>
