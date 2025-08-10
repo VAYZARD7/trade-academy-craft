@@ -4,9 +4,11 @@ import { Menu, X, TrendingUp, User, BookOpen, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { LanguageToggle } from "@/components/LanguageToggle";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <header className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-border z-50">
@@ -23,16 +25,16 @@ const Header = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/courses" className="text-muted-foreground hover:text-foreground transition-colors">
-              Courses
+              {t('header.courses')}
             </Link>
             <Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">
-              About
+              {t('header.about')}
             </Link>
             <Link to="/pricing" className="text-muted-foreground hover:text-foreground transition-colors">
-              Pricing
+              {t('header.pricing')}
             </Link>
             <Link to="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
-              Contact
+              {t('header.contact')}
             </Link>
           </div>
 
@@ -41,10 +43,10 @@ const Header = () => {
             <ThemeToggle />
             <LanguageToggle />
             <Button variant="ghost" asChild>
-              <Link to="/login">Login</Link>
+              <Link to="/login">{t('header.login')}</Link>
             </Button>
             <Button variant="hero" asChild>
-              <Link to="/register">Start Learning</Link>
+              <Link to="/register">{t('header.start_learning')}</Link>
             </Button>
           </div>
 
@@ -62,16 +64,16 @@ const Header = () => {
           <div className="md:hidden py-4 border-t border-border">
             <div className="flex flex-col space-y-4">
               <Link to="/courses" className="text-muted-foreground hover:text-foreground transition-colors">
-                Courses
+                {t('header.courses')}
               </Link>
               <Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">
-                About
+                {t('header.about')}
               </Link>
               <Link to="/pricing" className="text-muted-foreground hover:text-foreground transition-colors">
-                Pricing
+                {t('header.pricing')}
               </Link>
               <Link to="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
-                Contact
+                {t('header.contact')}
               </Link>
               <div className="flex flex-col space-y-2 pt-4 border-t border-border">
                 <div className="flex items-center justify-between mb-2">
@@ -79,10 +81,10 @@ const Header = () => {
                   <LanguageToggle />
                 </div>
                 <Button variant="ghost" asChild>
-                  <Link to="/login">Login</Link>
+                  <Link to="/login">{t('header.login')}</Link>
                 </Button>
                 <Button variant="hero" asChild>
-                  <Link to="/register">Start Learning</Link>
+                  <Link to="/register">{t('header.start_learning')}</Link>
                 </Button>
               </div>
             </div>

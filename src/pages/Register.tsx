@@ -3,18 +3,18 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Register = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
     password: "",
     confirmPassword: "",
-    role: "",
     phone: ""
   });
 
@@ -34,14 +34,14 @@ const Register = () => {
             </div>
             <span className="text-xl font-bold text-foreground">TradeMaster Academy</span>
           </div>
-          <CardTitle className="text-2xl font-bold text-foreground">Create Account</CardTitle>
-          <p className="text-muted-foreground">Join our trading community today</p>
+          <CardTitle className="text-2xl font-bold text-foreground">{t('register.title')}</CardTitle>
+          <p className="text-muted-foreground">{t('register.subtitle')}</p>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="firstName">First Name</Label>
+                <Label htmlFor="firstName">{t('register.first_name')}</Label>
                 <Input
                   id="firstName"
                   value={formData.firstName}
@@ -50,7 +50,7 @@ const Register = () => {
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="lastName">Last Name</Label>
+                <Label htmlFor="lastName">{t('register.last_name')}</Label>
                 <Input
                   id="lastName"
                   value={formData.lastName}
@@ -61,7 +61,7 @@ const Register = () => {
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">{t('register.email')}</Label>
               <Input
                 id="email"
                 type="email"
@@ -72,7 +72,7 @@ const Register = () => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="phone">Phone Number</Label>
+              <Label htmlFor="phone">{t('register.phone')}</Label>
               <Input
                 id="phone"
                 type="tel"
@@ -84,7 +84,7 @@ const Register = () => {
 
 
             <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password">{t('register.password')}</Label>
               <Input
                 id="password"
                 type="password"
@@ -95,7 +95,7 @@ const Register = () => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="confirmPassword">Confirm Password</Label>
+              <Label htmlFor="confirmPassword">{t('register.confirm_password')}</Label>
               <Input
                 id="confirmPassword"
                 type="password"
@@ -106,13 +106,13 @@ const Register = () => {
             </div>
 
             <Button type="submit" className="w-full" variant="hero">
-              Create Account
+              {t('register.create_account')}
             </Button>
 
             <div className="text-center text-sm text-muted-foreground">
-              Already have an account?{" "}
+              {t('register.already_have_account')}{" "}
               <Link to="/login" className="text-primary hover:underline">
-                Sign in
+                {t('register.sign_in')}
               </Link>
             </div>
           </form>

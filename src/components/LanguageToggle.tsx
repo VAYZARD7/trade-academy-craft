@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -7,11 +6,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Languages } from "lucide-react"
+import { useLanguage, Language } from "@/contexts/LanguageContext"
 
 export function LanguageToggle() {
-  const [language, setLanguage] = useState("en")
+  const { language, setLanguage } = useLanguage()
 
-  const languages = [
+  const languages: { code: Language; name: string; flag: string }[] = [
     { code: "en", name: "English", flag: "🇺🇸" },
     { code: "ru", name: "Русский", flag: "🇷🇺" },
   ]
